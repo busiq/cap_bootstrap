@@ -1,4 +1,11 @@
-# Cap Bootstrap
+# Fork info
+This is just simple modification of [cwslayor cap_bootstrap gem](https://github.com/cwsaylor/cap_bootstrap) that works well on debian6.
+
+Anyway, I removed rbenv recepie (I'm using rvm) and security(ufw settings) so you have to install&configure them manually.
+
+Tested on freesh debian6 install.
+
+# Original Cap Bootstrap info
 
 Capistrano tasks for deploying Rails applications using Ubuntu 10.04, rbenv, nginx, Unicorn and PostgreSQL. Based on the excellent Railscasts by Ryan Bates, with permission of course. If you are new to Capistrano or setting up a VPS, I highly recommend subscribing to his pro screencasts and watching the following:
 

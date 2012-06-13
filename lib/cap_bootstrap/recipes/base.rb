@@ -11,11 +11,12 @@ Capistrano::Configuration.instance(:must_exist).load do
   namespace :deploy do
     desc "Install everything onto the server"
     task :install do
-      run "#{sudo} bash -c 'echo UTC > /etc/timezone'"
-      run "#{sudo} cp /usr/share/zoneinfo/UTC /etc/localtime"
-      run "#{sudo} dpkg-reconfigure -f noninteractive tzdata"
       run "#{sudo} apt-get -y update"
       run "#{sudo} apt-get -y install python-software-properties"
+      run "#{sudo} cd /usr/sbin"
+      run "#{sudo} wget http://betamaster.us/blog/wp-content/uploads/2011/11/add-apt-repository"
+      run "#{sudo} chmod o+x /usr/sbin/add-apt-repository"
+      run "#{sudo} chown root:root /usr/sbin/add-apt-repository"
     end
   end
 end
